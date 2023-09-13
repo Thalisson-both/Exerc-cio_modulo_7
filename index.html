@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário</h1>
+        <h2>Preencha com 2 números</h2>
+        <form id="form-compara">
+            <input id="prim-numero" type="number" required placeholder="Primeiro número">
+            <input id="seg-numero" type="number" required placeholder="Segundo número">
+            <p id="mensagem-erro">
+                O segundo número precisa ser maior que o primeiro
+            </p>
+            <button type="submit">Verificar</button>
+            <p id="mensagem-sucesso">
+                Números verificados com sucesso!
+            </p>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
