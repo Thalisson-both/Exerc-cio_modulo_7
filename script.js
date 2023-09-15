@@ -1,20 +1,29 @@
 
-const form = document.getElementById('form-compara'); //Pego o formulário e coloco em uma constante
+const form = document.getElementById('form-compara'); // Pega o formulário e o armazena em uma constante
 const mensgErro = document.getElementById('mensagem-erro');
-const mensgSuc = document.getElementById('mensagem-sucesso')
+const mensgSuc = document.getElementById('mensagem-sucesso');
 
-form.addEventListener('submit', function(e){ //criação de uma 'Função' com o submit para o botão ondem quando clicar irá e executara a função evento(e)
-    const valorA = parseFloat(document.getElementById('prim-numero').value);
-    const valorB = parseFloat(document.getElementById('seg-numero').value);
-    
-    if (valorB <= valorA) {
-        e.preventDefault();
-        mensgErro.style.display = 'block';
+function veriNum(valorA, valorB) {
+    const valor1 = parseFloat(valorA);
+    const valor2 = parseFloat(valorB);
+    return valor2 <= valor1;
+}
+
+form.addEventListener('submit', function(e) { // Cria uma função para lidar com o evento de submit do formulário
+    e.preventDefault(); // Impede o envio padrão do formulário
+
+    const valorA = document.getElementById('prim-numero').value;
+    const valorB = document.getElementById('seg-numero').value;
+
+    if (!veriNum(valorA, valorB)) {
+        mensgErro.style.display = 'block'; // Exibe a mensagem de erro
+        mensgSuc.style.display = 'none'; // Esconde a mensagem de sucesso, se estiver visível
     } else {
-        e.preventDefault();
-        mensgSuc.style.display = 'block';
+        mensgSuc.style.display = 'block'; // Exibe a mensagem de sucesso
+        mensgErro.style.display = 'none'; // Esconde a mensagem de erro, se estiver visível
     }
-})
+});
+
 
 
 
