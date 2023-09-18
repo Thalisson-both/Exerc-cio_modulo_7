@@ -6,7 +6,7 @@ const mensgSuc = document.getElementById('mensagem-sucesso');
 function veriNum(valorA, valorB) {
     const valor1 = parseFloat(valorA);
     const valor2 = parseFloat(valorB);
-    return valor2 <= valor1;
+    return valor2 >= valor1;
 }
 
 form.addEventListener('submit', function(e) { // Cria uma função para lidar com o evento de submit do formulário
